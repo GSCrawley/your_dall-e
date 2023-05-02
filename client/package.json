@@ -1,7 +1,7 @@
 {
   "name": "client",
-  "homepage": "GSCrawley.github.io",
-  "CNAME": "www.your-dall-e.com",
+  "homepage": "GSCrawley.github.io/your_dall-e",
+  "CNAME": "your-dall-e.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",
