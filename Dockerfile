@@ -5,14 +5,14 @@ WORKDIR /app
 # Copy server package.json and package-lock.json to the container
 COPY server/package*.json ./server/
 
+# Install server dependencies
+RUN npm ci --prefix server --only=production
+
 # Copy client package.json and package-lock.json to the container
 COPY client/package*.json ./client/
 
-# Install server dependencies
-RUN cd server && npm ci --only=production
-
 # Install client dependencies
-RUN cd client && npm ci --only=production
+RUN npm ci --prefix client --only=production
 
 # Copy the built files from the client/dist folder into the container
 COPY client/dist/ .
