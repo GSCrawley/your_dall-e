@@ -1,12 +1,15 @@
 services:
-  - name: app
+  - name: your-dall-e
     dockerfile: Dockerfile
-    env:
-      - key: NODE_ENV
-        value: production
     internal_port: 3000
-    static_dirs:
-      - dist
+    routes:
+      - path: /api/*
+        destination: your-dall-e
+      - path: /*
+        destination: static
+  - name: static
+    build_command: npm run build
+    static_publish: client/dist
     routes:
       - path: /*
-        destination: app
+        destination: static
