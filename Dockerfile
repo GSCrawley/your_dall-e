@@ -11,7 +11,8 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the built files into the container
-COPY dist/ .
+COPY client/dist/ .
+
 
 # Expose the port that the Express back end will listen on
 EXPOSE 3000
