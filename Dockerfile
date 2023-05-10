@@ -21,4 +21,4 @@ COPY client/dist/ .
 EXPOSE 3000
 
 # Start the Express back end
-CMD [ "npm", "start" ]
+CMD [ "npm", "start", "--prefix", "server" ]
