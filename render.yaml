@@ -1,0 +1,12 @@
+services:
+  - name: app
+    dockerfile: Dockerfile
+    env:
+      - key: NODE_ENV
+        value: production
+    internal_port: 3000
+    static_dirs:
+      - dist
+    routes:
+      - path: /*
+        destination: app
