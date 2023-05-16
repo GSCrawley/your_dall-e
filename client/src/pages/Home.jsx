@@ -26,12 +26,8 @@ const Home = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('https://my-dalle.onrender.com/api/v1/post', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*', 
-                },
+            const response = await fetch('http://my-dalle.onrender.com/api/v1/post', {
+                method: 'GET',  
             });
             
             if (response.ok) {

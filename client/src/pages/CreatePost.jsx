@@ -30,15 +30,14 @@ const CreatePost = () => {
         if (form.prompt) {
           try {
             setGeneratingImg(true);
-            const response = await fetch('https://my-dalle.onrender.com/api/v1/dalle', {
+            const response = await fetch('http://my-dalle.onrender.com/api/v1/dalle', {
               method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*', 
-              },
-              body: JSON.stringify({
-                prompt: form.prompt,
-              }),
+            //   headers: {
+            //     'Content-Type': 'application/json',
+            //   },
+            //   body: JSON.stringify({
+            //     prompt: form.prompt,
+            //   }),
             });
     
             const data = await response.json(); 
@@ -62,11 +61,10 @@ const CreatePost = () => {
             try {
                 const response = await fetch('https://my-dalle.onrender.com/api/v1/post', {
                     method:'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Access-Control-Allow-Origin': '*'
-                    },
-                    body: JSON.stringify({ ...form }),
+                //     headers: {
+                //         'Content-Type': 'application/json',
+                //     },
+                //     body: JSON.stringify({ ...form }),
                 });
             
                 await response.json();
